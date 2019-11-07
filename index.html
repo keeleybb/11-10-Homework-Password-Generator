@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 app-name">
+                <h1 class="pt-5 mt-5">Password Generator</h1>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-8 offset-2 main-con px-4 py-4">
+                    <h2>Generate a Password</h2>
+                    <hr class="line my-3">
+                    <div class="row px-4">
+                        <div class="col-md-12 pwd-return py-4">
+                            <p id="yourPass" class="text-center">
+                                Your Secure Password
+                                <!-- <input type="text" id="yourPwd"  class="text-center" size="80" placeholder="Your Secure Password" />  -->
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="line my-3">
+
+                    <div class="row py-1">
+                        <div class="col-md-12 col-lg-4 col-sm-12 text-center py-1">
+                            <button type="button" id="submit" class="btn btn-danger btn-lg">Generate Password</button>
+                        </div>
+                        <div class="col-md-12 col-lg-4 col-sm-12 text-center hidden">
+                        </div>
+                        <div class="col-md-12 col-lg-4 col-sm-12 text-center py-1">
+                            <button type="button" class="btn btn-light btn-lg">Copy to clipboard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        //Variables
+        var lowerLetter = "abcdefghijklmnopqrstuvwxyz";
+        var upperLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var sym = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
+        var num = "0123456789";
+        var characters ='';
+
+
+        //User Inputs
+        var userChar = prompt("How many characters in your password? Pick a number between 8 and 128");
+        var userLower = confirm("Do you want lower case letters?");
+        var userUpper = confirm("Do you want upper case letters?");
+        var userSpecial = confirm("Do you want special characters?");
+        var userNumbers = confirm("Do you want numbers?");
+
+        //Convert input to number --Needs Validation
+        var Char = parseInt(userChar);
+        var yourPwd = document.getElementById('yourPass');
+
+
+//If Statement around this??
+
+        submit.addEventListener("click",function(){
+        // const characters = ''
+        // + (userLower ? lowerLetter : '')
+        // + (userUpper ? upperLetter : '')
+        // + (userNumbers ? num : '')
+        // + (userSpecial ? sym : '')
+        // + (userLower  === false && userUpper === false && userNumbers === false && userSpecial === false ? lowerLetter : '' )
+            if(userLower){
+                characters += lowerLetter;
+            } 
+            if(userUpper){
+                characters += upperLetter;
+            } 
+            if(userNumbers){
+                characters += num;
+            } 
+            if(userSpecial){
+                characters += sym;
+            } 
+            if(userLower  === false && userUpper === false && userNumbers === false && userSpecial === false){
+                characters += lowerLetter;
+            }
+
+
+
+        if (isNaN(Char) === false && Char >= 8 && Char <= 128) {
+        console.log(password(Char, characters));
+        yourPwd.innerText = password(Char, characters);
+        } else {
+            alert("Your number entry was not valid. Please refresh the page and enter a number between 8 and 128.")
+        }
+
+        });
+
+
+        //Function to create password randomly...Takes in users character count input and characters
+        function password(Char,characters){
+		//Create empty password variable
+        var pwd = '';
+
+        //For loop randomly selects character number(like index of array) and adds that character to password 
+        for(var i = 0; i<Char; i++){
+                pwd += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return pwd;
+}
+
+
+  </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

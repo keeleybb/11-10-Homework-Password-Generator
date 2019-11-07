@@ -1,0 +1,81 @@
+body {
+    background-color: #c5cbe1;
+}
+.app-name {
+    margin: auto;
+}
+
+/* Text */
+h1, h2, h3 {
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+  }
+  
+  h1 {
+    font-size: 28px;
+    line-height: 1em; 
+    color: #777; 
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #777;
+    line-height: 1.5em;
+  }
+  
+  h3 {
+    font-size: 22px;
+    line-height: 50px; 
+    color: #777;
+    font-weight: normal; 
+  }
+  
+  p {
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777;
+    font-size: 16px;
+    line-height: 2em;
+  }
+
+  
+  .main-con {
+    background: #fff;
+    margin:  40px auto;
+    border: 1px solid #ddd;
+    min-width: 230px;
+}
+
+.line {
+    height: 1px;
+    color: #ccc;
+    background-color: #ccc;
+    border: none;
+    margin: 10px 0px 20px 0;
+  }
+
+.pwd-return {
+    border: 3px dashed #ccc;
+}  
+
+textarea { 
+    border-style: none; 
+    border-color: Transparent; 
+    overflow: auto;        
+  }
+
+  input[type=text], select {
+    border: none !important;
+    width: 98%;
+    overflow: auto;
+  }
+
+  @media screen and (max-width: 1020px) {
+    .hidden {
+      display: none;
+    }
+  }
+
+
+
+
