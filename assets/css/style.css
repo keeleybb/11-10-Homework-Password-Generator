@@ -36,6 +36,7 @@ h1, h2, h3 {
     color: #777;
     font-size: 16px;
     line-height: 2em;
+    word-break: break-all;
   }
 
   
@@ -70,7 +71,7 @@ textarea {
     overflow: auto;
   }
 
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 793px) {
     .hidden {
       display: none;
     }
