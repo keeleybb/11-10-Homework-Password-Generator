@@ -3,14 +3,10 @@ var lowerLetter = "abcdefghijklmnopqrstuvwxyz";
 var upperLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var sym = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 var num = "0123456789";
-// var guaranteedCharacters; //Adds random characters from each true character set
 
 //Button Variables
 var submit = document.querySelector("#submit");
 var copyPass = document.querySelector("#copyPass");
-
-
-
 
 // On Click, Prompt User Questions, Add characters to characters string, Validate inputs, and kick off password function
 submit.addEventListener("click",function(){
@@ -28,7 +24,7 @@ submit.addEventListener("click",function(){
     var guaranteedCharacters = ''; //Adds random characters from each true character set
 
 
-    //Adding characters to string based on user inputs + Default option
+    //Adding characters to string based on user inputs + guaranteed character
     if(userLower){
         characters += lowerLetter;
         guaranteedCharacters = lowerLetter.charAt(Math.floor(Math.random() * lowerLetter.length));
@@ -49,11 +45,6 @@ submit.addEventListener("click",function(){
         guaranteedCharacters += sym.charAt(Math.floor(Math.random() * sym.length));
         console.log(guaranteedCharacters);
     } 
-
-    //Move this into the validation below
-    // if(userLower  === false && userUpper === false && userNumbers === false && userSpecial === false){
-    //     characters += lowerLetter;
-    // }
 
     //Validation of the user input for character count
     if (isNaN(charCount) || (charCount < 8 || charCount > 128 || (userLower  === false && userUpper === false && userNumbers === false && userSpecial === false))) {
