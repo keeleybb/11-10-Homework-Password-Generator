@@ -7,6 +7,7 @@ The generator is set to validate whether or not the user provided password lengt
 
 The user can use the copy and paste button to get the displayed password. This functionality is only confirmed in chrome and firefox. 
 
+See it in action: https://keeleybb.github.io/11-10-Homework-Password-Generator/
 
 ![Password Generator](assets/images/Password-Generator-1.JPG)
 
